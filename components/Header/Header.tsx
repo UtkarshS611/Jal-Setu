@@ -1,5 +1,5 @@
-
 "use client";
+
 import Image from "next/image";
 
 import { MenuIcon } from "lucide-react";
@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/sheet";
 
 import Link from "next/link";
+import { motion } from "framer-motion";
 import ThemeSwitch from "../ThemeSwitch/ThemeSwitch";
 
 
@@ -28,7 +29,12 @@ const Header = () => {
     ]
 
     return (
-        <section className="flex justify-center items-center py-4 header-animation px-4 lg:px-32">
+        <motion.section
+            initial={{ y: -50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+            className="flex justify-center items-center py-4 header-animation px-4 lg:px-32"
+        >
             <div className="w-full">
                 <nav className="flex items-center justify-between relative">
                     <Link
@@ -100,7 +106,7 @@ const Header = () => {
                     </Sheet>
                 </nav>
             </div>
-        </section>
+        </motion.section>
     );
 };
 

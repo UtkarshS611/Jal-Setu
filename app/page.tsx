@@ -3,7 +3,7 @@ import React from 'react'
 
 const Page = () => {
   return (
-    <main>
+    <main className='h-[500vh]'>
       <Hero />
     </main>
   )
